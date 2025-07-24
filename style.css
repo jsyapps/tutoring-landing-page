@@ -96,47 +96,7 @@ button:hover {
   border: solid black 2px;
 }
 
-#sign-in{
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  font-size: .9em;
 
-}
-
-#sign-in.top{
-  color:white;
-}
-
-#sign-in.scroll {
-  color:black;  
-}
-
-
-
-#sign-in:hover {
-  text-decoration:underline;
-  background:transparent;
-  border:none;
-}
-
-#book-trial.top{
-  color:white;
-  border: white solid 2px;
-}
-
-#book-trial.top:hover{
-  border:black solid 2px;
-}
-
-#book-trial.scroll:hover{
-  color:white;
-}
-
-#book-trial.scroll{
-  color:black;
-  border: black solid 2px;
-}
 
 
 
@@ -164,6 +124,7 @@ button:hover {
       background-size: cover;
   background-position: center; 
       
+      filter: blur(0px);
       position: absolute;
       top: 0;
       right: 0px;
@@ -308,13 +269,15 @@ button:hover {
     margin-bottom: 50px; /* Add more padding between sections */
 }
 
+.subjects-tutored .subjects {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 .subjects {
     display: flex;
     justify-content:space-between;
     padding-top:50px;
-    width: 90%;
-  margin: 0 auto;
-   
 }
 
 .subject {
@@ -358,16 +321,48 @@ button:hover {
     text-align: left;
 }
 
-.testimonials {
-    padding: 50px 0; /* Add more padding */
-    margin-bottom: 50px; /* Add more padding between sections */
+.messages-section {
+    padding: 50px 10px;
+    margin-bottom: 30px;
+}
+
+.messages-section h2 {
+    text-align: center;
+    padding-bottom: 40px;
 }
 
 
 
-.testimonials h2 {
-    text-align: center; /* Center the heading */
-    padding-bottom: 20px; /* Add space between the testimonial heading and the slideshow */
+
+.message-board {
+    display: flex;
+    gap: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    align-items: flex-start;
+    padding: 0 10px;
+}
+
+.message-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0px;
+}
+
+.message-item {
+    width: 200px;
+    height: auto;
+    justify-self: center;
+    align-self: center;
+}
+
+.testimonials-slide-image {
+    width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 blockquote:before {
@@ -388,12 +383,14 @@ blockquote:after {
     color: #333;
 }
 
+
+
 .slideshow {
     position: relative;
-    max-width: 90%;
-    
+    max-width: 900px;
     margin: 0 auto; /* Center the slideshow */
     padding-bottom: 20px; /* Add space between parts of the testimonials section */
+    
 }
 
 .slide {
@@ -534,12 +531,21 @@ footer a {
     .about-me {
         padding: 50px 20px; /* Shrink left and right padding */
     }
+    
     .subjects {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* 2x2 grid layout */
         gap: 50px;
     }
+  
+    
+    .message-column:nth-child(4) {
+        display: none;
+    }
+   
+    
 }
+
 
 @media (max-width: 576px){
   .logo{
@@ -573,10 +579,32 @@ footer a {
   .subjects{
       width:100%;
   }
+
+  .message-column:nth-child(3), 
+  .message-column:nth-child(4) {
+      display: none;
+  }
+  
+  .message-item {
+      width: 100%;
+  }
+  
+  .messages-section h2 {
+      padding-bottom: 20px;
+  }
+  
+  .message-board {
+      margin-bottom: 50px;
+  }
   
   blockquote:after {
     bottom: 70px;
     
   }
-  
+  .testimonials-slide-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 }
