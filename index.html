@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jessy Chen Math Tutor</title>
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=4">
     <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Poppins:wght@300;400;700&family=Special+Elite&display=swap" rel="stylesheet">
   
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
@@ -47,13 +47,15 @@ function gtag_report_conversion(url) {
           <span class="logo-name">Jessy<span class="last-name">Chen</span></span>
             <span class="logo-subtitle">MATH TUTOR</span>
         </div>
-      
+        <div class="header-buttons">
+            <button id="book-trial" class="top" type="submit" onclick="scrollToSection('contact-form-section')">Free Trial</button>
+        </div>
     </header>
 
     <div class="header-hero-container">
         <section class="hero">
           <h1>Overcome Math Anxiety <br>with a Perfect Scoring Tutor</h1>
-            <p>Private online sessions for having those "Aha!" moments</p>
+            <p>Private online lessons for having those "Aha!" moments</p>
 
             
                 <button class="book-session" type="submit" onclick="scrollToSection('contact-form-section')">Book Trial Session</button>
@@ -121,17 +123,18 @@ function gtag_report_conversion(url) {
                 <p>Algebra 1</p>
                 <p>Algebra 2</p>
             </div>
-            <div class="subject">
-                <img src="geometry.png" alt="Geometry Icon" loading="lazy">
-                <p>Geometry</p>
-                <p>Trigonometry</p>
-            </div>
-            <div class="subject">
+             <div class="subject">
                 <img src="calculus.png" alt="Calculus Icon" loading="lazy">
                 <p>Precalculus</p>
                 <p>AP Calc AB and BC</p>
                 <p>College Calculus</p>
             </div>
+            <div class="subject">
+                <img src="geometry.png" alt="Geometry Icon" loading="lazy">
+                <p>Geometry</p>
+                <p>Trigonometry</p>
+            </div>
+           
             <div class="subject">
                 <img src="statistics.png" alt="Statistics Icon" loading="lazy">
                 <p>AP Statistics</p>
@@ -144,7 +147,7 @@ function gtag_report_conversion(url) {
         <h2>About Me</h2>
         <div class="about-me-content">
             <div class="about-me-video">
-                <iframe width="300" height="170" src="https://www.youtube.com/embed/oZYbP8f7NME?si=a6L1BJ7QZmBebiYi" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://player.vimeo.com/video/1111069529?title=0&byline=0&portrait=0&badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="300" height="170" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Welcome"></iframe>
             </div>
             <div class="about-me-text">
                 <p>I began tutoring as a work-study job while majoring in economics at Duke University. After graduating, I combined my degree, math skills, and love of teaching to start my tutoring business.</p>
@@ -185,7 +188,10 @@ function gtag_report_conversion(url) {
             </div>
         </div>
 
-         <div class="slideshow">
+        <div class="testimonials-layout">
+            <!-- Text Testimonials -->
+            <div class="slideshow-container">
+                <div class="slideshow">
             
             <div class="slide">
                 
@@ -208,7 +214,7 @@ We have hired Jessy as a tutor for our son Julien over 3 years ago when he had t
             <div class="slide">
                 <blockquote>
                     <p class="quote">
-My daughter struggled with online learning in calculus. Jessy was professional and provided her with clear, concise instruction. She was able to process the instruction and understand the concepts to allow her to improve in her coursework and tests. She was able to grasp the concepts with his instruction. He gives students the tools to learn and understand. He also gives parents feedback. She made a B, which she was thrilled about, as the beginning of the semester her grades were lower. He does not do the problems for the students; he walks them through so they can obtain the concepts steps, and confidence to master the problems and retain the information. Worth every penny! I referred him to my nephew who is utilizing his tutoring in AP stats!</p>
+My daughter struggled with online learning in calculus. Jessy was professional and provided her with clear, concise instruction. She was able to process the instruction and understand the concepts to allow her to improve in her coursework and tests. He gives students the tools to learn and understand. He also gives parents feedback. She made a B, which she was thrilled about, as the beginning of the semester her grades were lower. He does not do the problems for the students; he walks them through so they can obtain the concepts steps, and confidence to master the problems and retain the information. Worth every penny!</p>
                     <p class="speaker">- Gonzaga University Parent</p>
                 </blockquote>
             </div>
@@ -222,10 +228,28 @@ My daughter struggled with online learning in calculus. Jessy was professional a
             <div class="slide ">
                 <img src="testimonials.png" alt="Testimonials overview" class="testimonials-slide-image" loading="lazy">
             </div>
-        </div>
-        <div class="slideshow-controls">
-            <button class="prev">&#10094;</button>
-            <button class="next">&#10095;</button>
+                </div>
+                <div class="slideshow-controls">
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
+            </div>
+            
+            <!-- Video Testimonials -->
+            <div class="video-testimonial-section">
+                <div class="video-slideshow">
+                    <div class="video-slide active">
+                        <div style="padding:177.78% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1104336166?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IMG_8665"></iframe></div>
+                    </div>
+                    <div class="video-slide">
+                        <div style="padding:177.78% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1104336191?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IMG_8666"></iframe></div>
+                    </div>
+                </div>
+                <div class="video-dots">
+                    <span class="video-dot active" onclick="showVideoSlide(0)"></span>
+                    <span class="video-dot" onclick="showVideoSlide(1)"></span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -259,5 +283,6 @@ My daughter struggled with online learning in calculus. Jessy was professional a
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
 </body>
 </html>

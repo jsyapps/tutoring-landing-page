@@ -46,9 +46,8 @@ header {
 }
 
 .logo {
-    display:flex;
-    align-items: center;
-    padding-left:10px;
+    display:grid;
+    padding-left: 10px;
 }
 
 .logo-name {
@@ -64,9 +63,10 @@ header {
 
 .logo-subtitle {
     font-family: 'Nunito' ;
-    font-size: 1em;
-    margin-top: 2px;
-    margin-left: -3px;
+    font-size: .8em;
+    position: relative;    
+    left: 15px;
+    top: -5px;
 }
 
 
@@ -94,6 +94,23 @@ button:hover {
     background-color: black;
     color:white;
   border: solid black 2px;
+}
+
+#book-trial.top{
+  display: none;
+}
+
+#book-trial.top:hover{
+  border:black solid 2px;
+}
+
+#book-trial.scroll:hover{
+  color:white;
+}
+
+#book-trial.scroll{
+  color:black;
+  border: black solid 2px;
 }
 
 
@@ -130,7 +147,7 @@ button:hover {
       right: 0px;
       bottom: 0px;
       left: -40%;
-      opacity: 0.12;
+      opacity: 0.07;
       overflow:hidden;
       width:150%;
   height:auto;
@@ -322,7 +339,7 @@ button:hover {
 }
 
 .messages-section {
-    padding: 50px 10px;
+    padding: 50px 20px;
     margin-bottom: 30px;
 }
 
@@ -365,8 +382,14 @@ button:hover {
     margin: 0 auto;
 }
 
+blockquote {
+    position: relative;
+    margin: 0;
+    padding: 1px 20px 25px 20px;
+}
+
 blockquote:before {
-    content: "“";
+    content: "\201C";
     font-size: 3em;
     position: absolute;
     left: 0px;
@@ -375,7 +398,7 @@ blockquote:before {
 }
 
 blockquote:after {
-    content: "”";
+    content: "\201D";
     font-size: 3em;
     position: absolute;
     right: 7px;
@@ -385,33 +408,91 @@ blockquote:after {
 
 
 
+.testimonials-layout {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+.video-testimonial-section {
+    flex: 0 0 200px;
+    max-width: 200px;
+}
+
+
+.video-slideshow {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-slide {
+    display: none;
+}
+
+.video-slide.active {
+    display: block;
+}
+
+.video-dots {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.video-dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.video-dot.active,
+.video-dot:hover {
+    background-color: #333;
+}
+
+.slideshow-container {
+    flex: 1;
+    min-width: 0;
+}
+
 .slideshow {
     position: relative;
-    max-width: 900px;
-    margin: 0 auto; /* Center the slideshow */
-    padding-bottom: 20px; /* Add space between parts of the testimonials section */
+    
     
 }
 
 .slide {
     display: none;
     text-align: left;
-  
 }
 
-.quote{
-  font-style:italic;
+.speaker {
+    color: black;
+    font-weight: 600;
+    margin-top: 15px;
 }
 
 .slide.active {
     display: block;
 }
 
-
+.testimonials-slide-image {
+    padding-bottom:35px;
+}
 
 .slideshow-controls {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .slideshow-controls button {
@@ -487,6 +568,7 @@ footer a {
     text-decoration: none;
 }
 
+
 @media (max-width: 900px) {
   
   body{
@@ -542,7 +624,48 @@ footer a {
     .message-column:nth-child(4) {
         display: none;
     }
-   
+    
+    .testimonials-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .testimonials-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        align-items: center;
+    }
+    
+  .video-testimonial-section {
+    max-width: 30%;
+    width: 100%;
+    
+    margin-top:40px;
+  }
+  
+  .video-testimonial-section .video-slideshow {
+    max-width: 100%;
+    
+  }
+  
+    
+    .slideshow-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    
+    .testimonials-slide-image {
+        width: 500px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
     
 }
 
@@ -606,5 +729,18 @@ footer a {
     height: auto;
     display: block;
     margin: 0 auto;
-}
+  }
+  
+  .video-testimonial-section {
+    max-width: 80%;
+    width: 100%;
+    
+  }
+  
+  .video-testimonial-section .video-slideshow {
+    max-width: 100%;
+  }
+  
+  
+  
 }
