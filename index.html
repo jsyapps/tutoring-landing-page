@@ -57,12 +57,20 @@
     
     <link rel="preload" href="style.css?v=4" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="style.css?v=4"></noscript>
-    <!-- Preload key fonts -->
+    <!-- Preconnect for faster font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Combined font loading with display=swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Poppins:wght@300;400;700&family=Special+Elite&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <!-- Defer Google Fonts to eliminate render blocking -->
+    <script>
+        // Load fonts after initial content renders
+        setTimeout(() => {
+            const link = document.createElement('link');
+            link.href = 'https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Poppins:wght@300;400;700&family=Special+Elite&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Permanent+Marker&display=swap';
+            link.rel = 'stylesheet';
+            document.head.appendChild(link);
+        }, 50);
+    </script>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-715232773"></script>
@@ -200,7 +208,10 @@ function gtag_report_conversion(url) {
         <h2>About Me</h2>
         <div class="about-me-content">
             <div class="about-me-video">
-                <iframe src="https://player.vimeo.com/video/1111069529?title=0&byline=0&portrait=0&badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="300" height="170" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Welcome"></iframe>
+                <div class="vimeo-lazy" data-video-id="1111069529" data-width="300" data-height="170" style="width: 300px; height: 170px; background: #000; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                    <div style="color: white; font-size: 40px;">▶</div>
+                    <div style="position: absolute; bottom: 10px; left: 10px; color: white; font-size: 12px;">Click to play video</div>
+                </div>
             </div>
             <div class="about-me-text">
                 <p>I began tutoring as a work-study job while majoring in economics at Duke University. After graduating, I combined my degree, math skills, and love of teaching to start my tutoring business.</p>
@@ -292,10 +303,10 @@ My daughter struggled with online learning in calculus. Jessy was professional a
             <div class="video-testimonial-section">
                 <div class="video-slideshow">
                     <div class="video-slide active">
-                        <div style="padding:177.78% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1104336166?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IMG_8665"></iframe></div>
+                        <div style="padding:177.78% 0 0 0;position:relative;"><div class="vimeo-lazy" data-video-id="1104336166" style="position:absolute;top:0;left:0;width:100%;height:100%; background: #000; cursor: pointer; display: flex; align-items: center; justify-content: center;"><div style="color: white; font-size: 40px;">▶</div></div></div>
                     </div>
                     <div class="video-slide">
-                        <div style="padding:177.78% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1104336191?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IMG_8666"></iframe></div>
+                        <div style="padding:177.78% 0 0 0;position:relative;"><div class="vimeo-lazy" data-video-id="1104336191" style="position:absolute;top:0;left:0;width:100%;height:100%; background: #000; cursor: pointer; display: flex; align-items: center; justify-content: center;"><div style="color: white; font-size: 40px;">▶</div></div></div>
                     </div>
                 </div>
                 <div class="video-dots">
@@ -336,6 +347,32 @@ My daughter struggled with online learning in calculus. Jessy was professional a
     </footer>
 
     <script src="script.js"></script>
-    <script src="https://player.vimeo.com/api/player.js"></script>
+    
+    <!-- Vimeo Lazy Loading Script -->
+    <script>
+        // Lazy load Vimeo videos when clicked
+        document.addEventListener('DOMContentLoaded', function() {
+            const vimeoLazy = document.querySelectorAll('.vimeo-lazy');
+            
+            vimeoLazy.forEach(function(element) {
+                element.addEventListener('click', function() {
+                    const videoId = this.getAttribute('data-video-id');
+                    const width = this.getAttribute('data-width') || '100%';
+                    const height = this.getAttribute('data-height') || '100%';
+                    
+                    const iframe = document.createElement('iframe');
+                    iframe.src = `https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1`;
+                    iframe.width = width;
+                    iframe.height = height;
+                    iframe.frameBorder = 0;
+                    iframe.allow = 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share';
+                    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+                    iframe.style.cssText = this.style.cssText;
+                    
+                    this.parentNode.replaceChild(iframe, this);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
