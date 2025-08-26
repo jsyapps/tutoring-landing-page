@@ -76,7 +76,6 @@
         }, 50);
     </script>
 
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-715232773"></script>
     <script>
@@ -87,19 +86,22 @@
       gtag('config', 'AW-715232773');
     </script>
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NG5VMTKN');</script>
-    <!-- End Google Tag Manager -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-715232773/TLoGCLvmvcYZEIWshtUC',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NG5VMTKN"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     
     <header class="top" id="header">
         <div class="logo">
@@ -322,7 +324,7 @@ My daughter struggled with online learning in calculus. Jessy was professional a
 
     <section class="contact-form-section" id="contact-form-section">
         <h2>Schedule a Free Trial Lesson Today!</h2>
-        <form class="contact-form" action="/thank-you.html" netlify>
+        <form class="contact-form" action="/book-trial" netlify>
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -337,7 +339,7 @@ My daughter struggled with online learning in calculus. Jessy was professional a
             </div>
 
           
-            <button type="submit">Submit</button>
+            <button type="submit" onclick="return gtag_report_conversion()">Submit</button>
             
         </form>
     </section>

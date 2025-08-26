@@ -71,6 +71,26 @@
     p:last-of-type {
       margin: 0;
     }
+
+    .trial-button {
+      display: inline-block;
+      background: #007067;
+      color: white !important;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none !important;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      margin: 8px 0;
+    }
+
+    .trial-button:hover,
+    .trial-button:focus {
+      background: #005951;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-decoration: none !important;
+    }
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -81,24 +101,9 @@
       gtag('js', new Date());
 
       gtag('config', 'AW-715232773');
-      
-      // Fire conversion event
-      gtag('event', 'conversion', {'send_to': 'AW-715232773/zdkkCI-iuoobEIWshtUC'});
     </script>
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NG5VMTKN');</script>
-    <!-- End Google Tag Manager -->
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NG5VMTKN"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
     <div class="main">
       <div class="card">
@@ -108,6 +113,12 @@
         <div class="body">
 
           <p>Your form submission has been received.</p>
+          
+          <p>Ready to get started? Book your free trial lesson now!</p>
+          
+          <p>
+            <a href="/book-trial.html" target="_blank" class="trial-button">Book Your Free Trial</a>
+          </p>
 
           <p>
             <a id="back-link" href="/">← Back to our site</a>
@@ -121,10 +132,6 @@
           document.getElementById("back-link").setAttribute("href", document.referrer);
         }
         
-        // Auto-open booking page in new tab after a short delay
-        setTimeout(function() {
-          window.open('/book-trial.html', '_blank');
-        }, 2000); // 2 second delay to let user see thank you message
       })();
     </script>
   </body>
