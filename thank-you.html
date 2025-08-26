@@ -73,6 +73,19 @@
     }
     </style>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-715232773"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-715232773');
+      
+      // Fire conversion event
+      gtag('event', 'conversion', {'send_to': 'AW-715232773/zdkkCI-iuoobEIWshtUC'});
+    </script>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -107,6 +120,11 @@
         if (document.referrer && document.location.host && document.referrer.match(new RegExp("^https?://" + document.location.host))) {
           document.getElementById("back-link").setAttribute("href", document.referrer);
         }
+        
+        // Auto-open booking page in new tab after a short delay
+        setTimeout(function() {
+          window.open('/book-trial.html', '_blank');
+        }, 2000); // 2 second delay to let user see thank you message
       })();
     </script>
   </body>
