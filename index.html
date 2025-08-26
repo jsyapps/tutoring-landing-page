@@ -86,20 +86,6 @@
       gtag('config', 'AW-715232773');
     </script>
 
-    <script>
-    function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
-      };
-      gtag('event', 'conversion', {
-          'send_to': 'AW-715232773/TLoGCLvmvcYZEIWshtUC',
-          'event_callback': callback
-      });
-      return false;
-    }
-    </script>
 </head>
 <body>
     
@@ -339,7 +325,7 @@ My daughter struggled with online learning in calculus. Jessy was professional a
             </div>
 
           
-            <button type="submit" onclick="return gtag_report_conversion('/book-trial.html')">Submit</button>
+            <button type="submit">Submit</button>
             
         </form>
     </section>
