@@ -3,5 +3,5 @@
 
 # Redirect /practice requests to practice.jessychenmath.com subdomain
 # Status 301 is a permanent redirect (browser URL will change)
-/practice/*  https://practice.jessychenmath.com/search/:splat  301
-/practice    https://practice.jessychenmath.com/search         301
+/practice/*  https://practice.jessychenmath.com/:splat  301
+/practice    https://practice.jessychenmath.com/         301
