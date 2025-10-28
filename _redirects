@@ -1,0 +1,8 @@
+# Netlify Redirects Configuration
+# Proxy /practice route to math-uploader search page
+
+# Proxy all /practice requests to the deployed math-uploader app
+# The :splat captures any path after /practice and forwards it
+# Status 200! creates a proxy (doesn't change URL in browser)
+/practice/*  https://jessychenmath-practice.netlify.app/search/:splat  200!
+/practice    https://jessychenmath-practice.netlify.app/search         200!
