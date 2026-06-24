@@ -380,16 +380,16 @@ button:hover {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    color: #2e7d32;
-    background-color: #e8f5e9;
-    border: solid #2e7d32 2px;
+    color: #0056b3;
+    background-color: #e6f2ff;
+    border: solid #0056b3 2px;
     border-radius: 15px;
     padding: 8px 18px;
     font-size: 0.9em;
 }
 
 .chip strong {
-    color: #2e7d32;
+    color: #0056b3;
     font-weight: 700;
 }
 
