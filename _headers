@@ -1,0 +1,29 @@
+# Netlify response headers
+# https://docs.netlify.com/routing/headers/
+
+# --- Static assets: cache for 1 year so repeat visits are instant ---
+# NOTE: these are cached by filename. When you change an image/CSS/JS file,
+# either rename it or bump a ?v= query in the HTML (e.g. style.css?v=124,
+# laptop.png?v=2) so returning visitors fetch the new version.
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# --- HTML: always revalidate so users get the latest page ---
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate

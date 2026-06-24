@@ -1,0 +1,13 @@
+# OS / tooling cruft
+.DS_Store
+.playwright-mcp/
+
+# Dev/QA screenshots (not part of the site)
+pasha-*.png
+local-*.png
+after-size-*.png
+swap-*.png
+desktop-6col.png
+Screenshot *.png
+IMG_*.jpg
+*_backup.png

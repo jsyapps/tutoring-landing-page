@@ -3,11 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jessy Chen Math Tutor</title>
+    <title>Online Math Tutor for Calculus, Statistics &amp; Algebra | Jessy Chen</title>
+    <meta name="description" content="Online math tutoring with Jessy Chen, a perfect-scoring Duke grad. Calculus, statistics, algebra, AP & test prep that beats math anxiety. Book a free trial session.">
+    <link rel="canonical" href="https://jessychenmath.com/">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="64x64" href="64px-Ionicons_calculator.svg.png">
     <link rel="apple-touch-icon" sizes="64x64" href="64px-Ionicons_calculator.svg.png">
+
+    <!-- Open Graph (link previews on iMessage, Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jessychenmath.com/">
+    <meta property="og:title" content="Online Math Tutor for Calculus, Statistics & Algebra | Jessy Chen">
+    <meta property="og:description" content="Perfect-scoring Duke grad. Calculus, statistics, algebra, AP & test prep that beats math anxiety. Book a free trial session.">
+    <meta property="og:image" content="https://jessychenmath.com/og-laptop.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Jessy Chen Math">
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Online Math Tutor for Calculus, Statistics & Algebra | Jessy Chen">
+    <meta name="twitter:description" content="Perfect-scoring Duke grad. Calculus, statistics, algebra, AP & test prep that beats math anxiety. Book a free trial session.">
+    <meta name="twitter:image" content="https://jessychenmath.com/og-laptop.jpg">
+
+    <!-- Structured data: who provides the service, for rich results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://jessychenmath.com/#jessy",
+          "name": "Jessy Chen",
+          "jobTitle": "Math Tutor",
+          "url": "https://jessychenmath.com/",
+          "image": "https://jessychenmath.com/thumb.jpg",
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Duke University"
+          },
+          "knowsAbout": ["Calculus", "Statistics", "Algebra", "Geometry", "Trigonometry", "Precalculus", "AP Calculus", "AP Statistics", "SAT Math", "ACT Math"]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://jessychenmath.com/#service",
+          "name": "Jessy Chen Math Tutoring",
+          "url": "https://jessychenmath.com/",
+          "image": "https://jessychenmath.com/thumb.jpg",
+          "description": "Online one-on-one math tutoring in calculus, statistics, algebra, geometry, and AP/SAT/ACT test prep.",
+          "provider": { "@id": "https://jessychenmath.com/#jessy" },
+          "areaServed": "Online",
+          "serviceType": "Math tutoring",
+          "priceRange": "$$"
+        }
+      ]
+    }
+    </script>
     
     <!-- Critical CSS for above-the-fold content -->
     <style>
@@ -15,7 +67,7 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             margin: 0; padding: 0; box-sizing: border-box;
-            min-width: 320px; zoom: 1.1;
+            min-width: 75px;
         }
         header {
             display: flex; justify-content: space-between; align-items: center;
@@ -24,8 +76,8 @@
         }
         #header.top { background-color: transparent; }
         #header.scroll { background-color: white; color: black; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
-        .logo { display: grid; padding-left: 10px; }
-        .logo-name { font-family: 'Brush Script MT', cursive; font-size: 2em; margin-right: 10px; }
+        .logo { display: flex; align-items: center; padding-left: 10px; }
+        .logo-name { font-family: 'Reenie Beanie', cursive; font-size: 2em; white-space: nowrap; word-spacing: -5px; }
         .last-name { margin-left: 4px; }
         .logo-subtitle { font-size: .8em; position: relative; left: 15px; top: -5px; }
         .header-buttons { display: flex; padding-right: 45px; }
@@ -36,11 +88,13 @@
         }
         button:hover { background-color: black; color: white; border: solid black 2px; }
         #book-trial.top { display: none; }
-        .header-hero-container { 
-            background-color: rgb(51, 51, 51); background-size: cover; 
-            position: relative; z-index: 1; padding-top: 75px; padding-bottom: 35%; 
+        .header-hero-container {
+            background-color: rgb(30, 30, 30); background-size: cover;
+            position: relative; z-index: 1;
+            padding-top: 75px;
+            padding-bottom: calc(min(31.6%, 395px) + 50px);
         }
-        .header-hero-container::before {    
+        .header-hero-container::before {
             content: ""; background-image: url('blackboard.jpg');
             background-repeat: no-repeat; background-size: cover;
             background-position: center; filter: blur(0px);
@@ -48,19 +102,44 @@
             opacity: 0.07; overflow: hidden; width: 150%; height: auto;
         }
         .hero { text-align: center; color: white; position: relative; max-width: 90%; margin: 0 auto; }
-        .hero h1 { font-size: 3em; font-family: 'Impact', 'Permanent Marker', sans-serif; }
-        .hero p { font-size: 1.3em; }
+        .hero h1 { font-size: clamp(3.1rem, 4.8vw, 4.6rem); line-height: 1.15; font-family: 'Impact', 'Permanent Marker', sans-serif; }
+        .hero p { font-size: 1.45em; color: white; }
         .book-session { position: relative; color: white; }
-        .overlap-image-container { position: relative; z-index: 2; text-align: center; margin-top: -30%; }
-        .overlap-image { width: 80%; max-width: 1000px; display: block; margin: 0 auto; height: auto; }
+        /* Laptop straddles the hero/section boundary: top ~2/3 over the chalkboard,
+           bottom ~1/3 over the white section. Pulled up into the bottom of the
+           hero; fades in on scroll (.reveal-up) instead of on load. */
+        .overlap-image-container { position: relative; z-index: 2; text-align: center; margin-top: max(-31.6%, -395px); }
+        .overlap-image { width: 84%; max-width: 1080px; display: block; margin: 0 auto; height: auto; }
         @media (max-width: 576px) {
             .hero { padding: 0 20px; }
-            .hero h1 { font-size: 2.5em; }
+            .hero h1 { font-size: 2.7em; }
+        }
+        /* Scroll reveal: fade + slide-up (gated behind .js-anim so content is
+           always visible without JS; disabled for reduced-motion users) */
+        .js-anim .reveal-heading, .js-anim .reveal, .js-anim .reveal-up {
+            opacity: 0; transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .js-anim .reveal-heading.is-visible, .js-anim .reveal.is-visible, .js-anim .reveal-up.is-visible { opacity: 1; transform: none; }
+
+        /* Slide-in from the side (used by the How-It-Works step images) */
+        .js-anim .reveal-left, .js-anim .reveal-right {
+            opacity: 0;
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        /* Images start on the text side and slide outward toward their edge */
+        .js-anim .reveal-left { transform: translateX(48px); }
+        .js-anim .reveal-right { transform: translateX(-48px); }
+        .js-anim .reveal-left.is-visible, .js-anim .reveal-right.is-visible { opacity: 1; transform: none; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .js-anim .reveal-heading, .js-anim .reveal, .js-anim .reveal-up, .js-anim .reveal-left, .js-anim .reveal-right { opacity: 1 !important; transform: none !important; transition: none !important; }
         }
     </style>
-    
-    <link rel="preload" href="style.css?v=4" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="style.css?v=4"></noscript>
+    <script>document.documentElement.classList.add('js-anim');</script>
+
+    <link rel="preload" href="style.css?v=123" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css?v=123"></noscript>
     <!-- Preconnect for faster font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,8 +170,7 @@
     
     <header class="top" id="header">
         <div class="logo">
-          <span class="logo-name">Jessy<span class="last-name">Chen</span></span>
-            <span class="logo-subtitle">MATH TUTOR</span>
+          <span class="logo-name">Jessy Chen Math</span>
         </div>
         <div class="header-buttons">
             <button id="book-trial" class="top" type="submit" onclick="scrollToSection('contact-form-section')">Free Trial</button>
@@ -102,142 +180,69 @@
     <div class="header-hero-container">
         <section class="hero">
           <h1>Overcome Math Anxiety <br>with a Perfect Scoring Tutor</h1>
-            <p>Private online lessons for having those "Aha!" moments</p>
-
-            
+            <p>Online tutoring sessions for having those "Aha!" moments</p>
                 <button class="book-session" type="submit" onclick="scrollToSection('contact-form-section')">Book Trial Session</button>
-            
         </section>
     </div>
 
-    <div class="overlap-image-container">
-        <img src="laptop.png" alt="Overlap Image" class="overlap-image" width="742" height="440" style="height: auto;">
-      
-      
+    <div class="overlap-image-container reveal-up">
+        <picture>
+            <source srcset="laptop.webp" type="image/webp">
+            <img src="laptop.png" alt="Jessy Chen tutoring math on a laptop" class="overlap-image" width="742" height="440" style="height: auto;">
+        </picture>
     </div>
 
-    <section class="how-it-works">
-       
-      <div class="intro">
-      <h2>A Modern and Convenient Tutoring Solution <br> for Students and Parents</h2>
-        <p>Easy to set up tools, ready to go in minutes!</p></div>
-        <div class="step">
-            <div class="step-content">
-                <h3>Book a time</h3>
-                <p>Students find an opening on my calendar or set up a regular meeting time. Available evenings and weekends.</p>
-            </div>
-            <div class="step-image">
-                <img src="step1.png" alt="Step 1 Image" loading="lazy" width="670" height="416">
-            </div>
-        </div>
-        <div class="step">
-            <div class="step-image">
-                <img src="step2.jpeg" alt="Step 2 - Send homework problems" id="text" loading="lazy" width="450" height="598">
-            </div>
-            <div class="step-content">
-                <h3>Send me the problems</h3>
-                <p>Students then take pictures of their homework and text or email them to me so I can prepare the lesson.</p>
-            </div>
-        </div>
-        <div class="step">
-            <div class="step-content">
-                <h3>Start tutoring!</h3>
-                <p>I give students a call on Zoom and send them the whiteboard link to start the session.</p>
-            </div>
-            <div class="step-image">
-                <img src="step3.png" alt="Step 3 Image" loading="lazy" width="670" height="500">
-            </div>
-        </div>
-        <div class="step">
-            <div class="step-image shadow">
-                <img src="step4.png" alt="Step 4 Image" loading="lazy" width="670" height="382">
-            </div>
-            <div class="step-content">
-                <h3>Rewatch Tutoring Sessions</h3>
-                <p>Tutoring sessions are recorded, so students can rewatch them via private Zoom link.</p>
-            </div>
-        </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <section class="subjects-tutored">
-        <h2>Subjects Tutored</h2>
-        <div class="subjects">
-             <div class="subject">
-                <img src="calculus.png" alt="Calculus Icon" loading="lazy" width="512" height="512">
-                <p>Precalculus</p>
-                <p>AP Calc AB and BC</p>
-                <p>College Calculus</p>
-            </div>
-
-            <div class="subject">
-                <img src="algebra.png" alt="Algebra Icon" loading="lazy" width="512" height="512">
-                <p>Prealgebra</p>
-                <p>Algebra 1</p>
-                <p>Algebra 2</p>
-            </div>
-            <div class="subject">
-                <img src="statistics.png" alt="Statistics Icon" loading="lazy" width="512" height="512">
-                <p>AP Statistics</p>
-                <p>College Intro to Stats</p>
-            </div>
-          
-            
-            <div class="subject">
-                <img src="geometry.png" alt="Geometry Icon" loading="lazy" width="512" height="512">
-                <p>Geometry</p>
-                <p>Trigonometry</p>
-            </div>
-           
-            
-        </div>
-    </section>
-
-    <section class="about-me">
-        <h2>About Me</h2>
-        <div class="about-me-content">
-            <div class="about-me-video">
-                <div class="vimeo-lazy" data-video-id="1111069529" data-width="300" data-height="170" style="width: 300px; height: 170px; background-image: url('thumb.jpg'); background-size: cover; background-position: center; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center;">
-                    <div style="color: white; font-size: 50px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); opacity: 0.9;">▶</div>
-                </div>
-            </div>
-            <div class="about-me-text">
-                <p>I began tutoring as a work-study job while majoring in economics at Duke University. After graduating, I combined my degree, math skills, and love of teaching to start my tutoring business.</p>
-                <p><b>Test scores:</b> AP Calculus BC - 5, AP Statistics - 5, ACT Math - 36, SAT Math Level 2 - 800</p>
-            </div>
-        </div>
-    </section>
-
     <section class="messages-section">
-        <h2>Testimonials</h2>
+        <h2 class="reveal-heading">Success Stories</h2>
         
         <div class="message-board">
-            <div class="message-column">
-                <img src="message3.png" alt="Student message" class="message-item" loading="lazy" width="211" height="205">
-                
-                
-                <img src="message5.png" alt="Student message" class="message-item" loading="lazy" width="203" height="110">
+            <!-- 6 columns. Column 1 = the testimonial video(s); columns 2-6 hold the
+                 message screenshots in curated order, chunked to roughly the video's
+                 height. The row scrolls horizontally when the viewport cannot fit
+                 all six readable columns. -->
+            <div class="mb-viewport">
+            <div class="mb-top">
+                <div class="mb-col mb-video-col">
+                    <div class="video-testimonial-section">
+                        <div class="video-slideshow">
+                            <div class="video-slide active">
+                                <div style="padding:177.78% 0 0 0;position:relative;"><div class="vimeo-lazy" data-video-id="1104336166" style="position:absolute;top:0;left:0;width:100%;height:100%; background-image: url('thumb2.jpg'); background-image: image-set(url('thumb2.webp') type('image/webp'), url('thumb2.jpg') type('image/jpeg')); background-size: cover; background-position: center; background-repeat: no-repeat; cursor: pointer; display: flex; align-items: center; justify-content: center;"><div style="color: white; font-size: 40px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); opacity: 0.9;">▶</div></div></div>
+                            </div>
+                            <div class="video-slide">
+                                <div style="padding:177.78% 0 0 0;position:relative;"><div class="vimeo-lazy" data-video-id="1104336191" style="position:absolute;top:0;left:0;width:100%;height:100%; background-image: url('thumb3.jpg'); background-image: image-set(url('thumb3.webp') type('image/webp'), url('thumb3.jpg') type('image/jpeg')); background-size: cover; background-position: center; background-repeat: no-repeat; cursor: pointer; display: flex; align-items: center; justify-content: center;"><div style="color: white; font-size: 40px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); opacity: 0.9;">▶</div></div></div>
+                            </div>
+                        </div>
+                        <div class="video-dots">
+                            <span class="video-dot active" onclick="showVideoSlide(0)"></span>
+                            <span class="video-dot" onclick="showVideoSlide(1)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-col">
+                    <img src="message14.png?v=2" alt="Student message" class="message-item" loading="lazy" width="276" height="328">
+                    <img src="message3.png" alt="Student message" class="message-item" loading="lazy" width="211" height="205">
+                </div>
+                <div class="mb-col">
+                    <img src="message13.png?v=2" alt="Student message" class="message-item" loading="lazy" width="285" height="252">
+                    <img src="message9.png" alt="Student message" class="message-item" loading="lazy" width="206" height="197">
+                </div>
+                <div class="mb-col">
+                    <img src="message4.png" alt="Parent message" class="message-item" loading="lazy" width="214" height="125">
+                    <img src="message8.png" alt="Parent message" class="message-item" loading="lazy" width="209" height="167">
+                </div>
+                <div class="mb-col">
+                    <img src="message5.png" alt="Student message" class="message-item" loading="lazy" width="203" height="110">
+                    <img src="message7.png" alt="Student message" class="message-item" loading="lazy" width="181" height="56">
+                    <img src="message1.png" alt="Student message" class="message-item" loading="lazy" width="213" height="105">
+                    <img src="message2.png" alt="Student message" class="message-item" loading="lazy" width="217" height="93">
+                </div>
+                <div class="mb-col">
+                    <img src="message12.png" alt="Parent message" class="message-item" loading="lazy" width="211" height="92">
+                    <img src="message6.png" alt="Parent message" class="message-item" loading="lazy" width="213" height="85">
+                    <img src="message11.png" alt="Parent message" class="message-item" loading="lazy" width="213" height="77">
+                    <img src="message10.png" alt="Parent message" class="message-item" loading="lazy" width="199" height="56">
+                </div>
             </div>
-            <div class="message-column">
-                <img src="message2.png" alt="Student message" class="message-item" loading="lazy" width="217" height="93">
-                <img src="message9.png" alt="Student message" class="message-item" loading="lazy" width="206" height="197">
-                <img src="message10.png" alt="Parent message" class="message-item" loading="lazy" width="199" height="56">
-                
-            </div>
-            <div class="message-column">
-                <img src="message1.png" alt="Student message" class="message-item" loading="lazy" width="213" height="105">
-                <img src="message7.png" alt="Student message" class="message-item" loading="lazy" width="181" height="56">
-                
-                <img src="message11.png" alt="Parent message" class="message-item" loading="lazy" width="213" height="77">
-                
-                <img src="message4.png" alt="Parent message" class="message-item" loading="lazy" width="214" height="125">
-            </div>
-            <div class="message-column">
-                <img src="message6.png" alt="Parent message" class="message-item" loading="lazy" width="213" height="85">
-                <img src="message8.png" alt="Parent message" class="message-item" loading="lazy" width="209" height="167">
-                <img src="message12.png" alt="Parent message" class="message-item" loading="lazy" width="211" height="92">
-                
             </div>
         </div>
 
@@ -245,9 +250,39 @@
             <!-- Text Testimonials -->
             <div class="slideshow-container">
                 <div class="slideshow">
-            
+
             <div class="slide">
-                
+                <div class="school-logos">
+                    <p class="school-logos-heading">Tutored Students From</p>
+                    <div class="school-logos-row">
+                        <img src="logos/logo-harvard.png?v=2" alt="Harvard University" class="school-logo" width="400" height="105" decoding="sync">
+                        <img src="logos/logo-duke.svg" alt="Duke University" class="school-logo" width="201" height="88" decoding="sync">
+                        <img src="logos/logo-washu.png?v=2" alt="Washington University in St. Louis" class="school-logo" width="400" height="97" decoding="sync">
+                        <img src="logos/logo-fordham.png?v=2" alt="Fordham University" class="school-logo" width="400" height="107" decoding="sync">
+                        <img src="logos/logo-stpauls.svg" alt="St. Paul's School" class="school-logo" width="320" height="67" decoding="sync">
+                        <img src="logos/logo-hopkins.png?v=2" alt="Hopkins School" class="school-logo" width="400" height="137" decoding="sync">
+                        <img src="logos/logo-thacher.png?v=2" alt="The Thacher School" class="school-logo" width="400" height="41" decoding="sync">
+                        <img src="logos/logo-img.png?v=2" alt="IMG Academy" class="school-logo" width="400" height="38" decoding="sync">
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <picture>
+                    <source srcset="award-hopkins.webp" type="image/webp">
+                    <img src="award-hopkins.png" alt="The John Heath Mathematics Prize awarded by Hopkins School to one of Jessy's students" class="testimonials-slide-image" loading="lazy" width="578" height="495">
+                </picture>
+            </div>
+
+            <div class="slide">
+                <picture>
+                    <source srcset="testimonials.webp" type="image/webp">
+                    <img src="testimonials.jpg" alt="Testimonials overview" class="testimonials-slide-image" loading="lazy" width="1230" height="820">
+                </picture>
+            </div>
+
+            <div class="slide">
+
                   <blockquote>
                     <p class="quote">
 We have hired Jessy as a tutor for our son Julien over 3 years ago when he had to skip a math level during his sophomore year: Jessy was highly recommended to us and we were so thrilled with our son's progress after he first helped tutor him in Algebra and then for Geometry the following year. We loved how patient and approachable Jessy was and our son requested to keep him as his tutor. When it was time to study for the ACT, Jessy tutored our son again and was able to bring his score up over 3 points in a few months!  We have already referred Jessy to our friends and we highly recommend him!</p>
@@ -277,39 +312,131 @@ My daughter struggled with online learning in calculus. Jessy was professional a
                     <p class="speaker">- North Carolina Parent</p>
               </blockquote>
             </div>
-
-            <div class="slide ">
-                <img src="testimonials.png" alt="Testimonials overview" class="testimonials-slide-image" loading="lazy" width="1230" height="820">
-            </div>
                 </div>
-                <div class="slideshow-controls">
-                    <button class="prev">&#10094;</button>
-                    <button class="next">&#10095;</button>
-                </div>
-            </div>
-            
-            <!-- Video Testimonials -->
-            <div class="video-testimonial-section">
-                <div class="video-slideshow">
-                    <div class="video-slide active">
-                        <div style="padding:177.78% 0 0 0;position:relative;"><div class="vimeo-lazy" data-video-id="1104336166" style="position:absolute;top:0;left:0;width:100%;height:100%; background-image: url('thumb2.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; cursor: pointer; display: flex; align-items: center; justify-content: center;"><div style="color: white; font-size: 40px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); opacity: 0.9;">▶</div></div></div>
-                    </div>
-                    <div class="video-slide">
-                        <div style="padding:177.78% 0 0 0;position:relative;"><div class="vimeo-lazy" data-video-id="1104336191" style="position:absolute;top:0;left:0;width:100%;height:100%; background-image: url('thumb3.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; cursor: pointer; display: flex; align-items: center; justify-content: center;"><div style="color: white; font-size: 40px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); opacity: 0.9;">▶</div></div></div>
-                    </div>
-                </div>
-                <div class="video-dots">
-                    <span class="video-dot active" onclick="showVideoSlide(0)"></span>
-                    <span class="video-dot" onclick="showVideoSlide(1)"></span>
-                </div>
+                <div class="slide-dots"></div>
             </div>
         </div>
     </section>
 
   
 
+    <section class="about-me">
+        <h2 class="reveal-heading">About Me</h2>
+        <div class="about-me-content">
+            <div class="about-me-video">
+                <div class="vimeo-lazy" data-video-id="1111069529" data-width="380" data-height="215" style="width: 380px; max-width: 100%; aspect-ratio: 16 / 9; background-image: url('thumb.jpg'); background-image: image-set(url('thumb.webp') type('image/webp'), url('thumb.jpg') type('image/jpeg')); background-size: cover; background-position: center; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                    <div style="color: white; font-size: 50px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); opacity: 0.9;">▶</div>
+                </div>
+            </div>
+            <div class="about-me-text">
+                <p>I began tutoring as a work-study job while majoring in economics at Duke University. After graduating, I combined my degree, math skills, and love of teaching to start my tutoring business.</p>
+                <p class="test-scores-label"><b>My test scores:</b></p>
+                <div class="score-chips">
+                    <span class="chip">AP Calculus BC: <strong>5</strong></span>
+                    <span class="chip">AP Statistics: <strong>5</strong></span>
+                    <span class="chip-break"></span>
+                    <span class="chip">ACT Math: <strong>36</strong></span>
+                    <span class="chip">SAT Math II: <strong>800</strong></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="subjects-tutored">
+        <h2 class="reveal-heading">Subjects Tutored</h2>
+        <div class="subjects">
+             <div class="subject">
+                <img src="calculus.png" alt="Calculus Icon" loading="lazy" width="512" height="512">
+                <p>College Calculus</p>
+                <p>AP Calc AB and BC</p>
+                <p>Precalculus</p>
+            </div>
+
+            <div class="subject">
+                <img src="statistics.png" alt="Statistics Icon" loading="lazy" width="512" height="512">
+                <p>College Statistics</p>
+                <p>AP Statistics</p>
+            </div>
+            <div class="subject">
+                <img src="algebra.png" alt="Algebra Icon" loading="lazy" width="512" height="512">
+                 <p>Algebra 2</p>
+                 <p>Algebra 1</p>
+                <p>Prealgebra</p>
+                
+               
+            </div>
+          
+            
+            <div class="subject">
+                <img src="geometry.png" alt="Geometry Icon" loading="lazy" width="512" height="512">
+                <p>Trigonometry</p>
+                <p>Geometry</p>
+                
+            </div>
+           
+            
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="how-it-works">
+       
+      <div class="intro reveal-heading">
+      <h2>How Tutoring Works</h2>
+        <p>Easy to set up tools, ready to go in minutes!</p></div>
+        <div class="step">
+            <div class="step-content">
+                <h3>Book a time</h3>
+                <p>Students find an opening on my calendar or set up a regular meeting time. Available evenings and weekends.</p>
+            </div>
+            <div class="step-image reveal-right">
+                <picture>
+                    <source srcset="step1.webp" type="image/webp">
+                    <img src="step1.jpg" alt="Booking a math tutoring session on an online calendar" loading="lazy" width="670" height="416">
+                </picture>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-image reveal-left">
+                <picture>
+                    <source srcset="step2.webp" type="image/webp">
+                    <img src="step2.jpeg" alt="Step 2 - Send homework problems" id="text" loading="lazy" width="450" height="598">
+                </picture>
+            </div>
+            <div class="step-content">
+                <h3>Send me the problems</h3>
+                <p>Students then take pictures of their homework and text or email them to me so I can prepare the lesson.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-content">
+                <h3>Start tutoring!</h3>
+                <p>I give students a call on Zoom and send them the whiteboard link to start the session.</p>
+            </div>
+            <div class="step-image reveal-right">
+                <picture>
+                    <source srcset="step3.webp" type="image/webp">
+                    <img src="step3.jpg" alt="Jessy Chen leading an online math tutoring session over Zoom" loading="lazy" width="670" height="500">
+                </picture>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-image shadow reveal-left">
+                <picture>
+                    <source srcset="step4.webp" type="image/webp">
+                    <img src="step4.jpg" alt="Rewatching a recorded math tutoring session via private Zoom link" loading="lazy" width="670" height="382">
+                </picture>
+            </div>
+            <div class="step-content">
+                <h3>Rewatch Tutoring Sessions</h3>
+                <p>Tutoring sessions are recorded, so students can rewatch them via private Zoom link.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="contact-form-section" id="contact-form-section">
-        <h2>Schedule a Free Trial Lesson Today!</h2>
+        <h2 class="reveal-heading">Schedule a Trial Session Today!</h2>
         <form class="contact-form" action="/book-trial.html" netlify>
             <div class="form-group">
                 <label for="name">Name:</label>
@@ -331,11 +458,11 @@ My daughter struggled with online learning in calculus. Jessy was professional a
     </section>
 
     <footer>
-        <p>&copy; 2025 Jessy Chen Math Tutor</p>
+        <p>&copy; 2026 Jessy Chen Math Tutor</p>
         <a href="privacy-policy.html">Privacy Policy</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=21"></script>
     
     <!-- Vimeo Lazy Loading Script -->
     <script>

@@ -7,17 +7,20 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    min-width: 320px; /* Adjust this value as needed */
-  
-  zoom: 1.1;
+    min-width: 75px; /* Adjust this value as needed */
 }
 
 p{
   font-size: 1.1em;
+  color: #242424;
+  line-height: 1.55;
 }
 
 h3{
-  font-size: 1.2em;
+  font-size: 1.35em;
+  line-height: 1.15;
+  color: #050505;
+  font-weight: 700;
 }
 
 
@@ -54,6 +57,8 @@ header {
     font-family: 'Reenie Beanie', sans-serif;
     font-size: 2em;
     margin-right: 10px;
+    white-space: nowrap;
+    word-spacing: -5px;
 }
 
 .last-name{
@@ -120,18 +125,14 @@ button:hover {
 
 
 .header-hero-container {
-    
-    
-    background-color: rgb(51, 51, 51);
-    
+    background-color: rgb(30, 30, 30);
     background-size: cover;
-    
-    
     position: relative;
     z-index: 1;
-    padding-top:75px;
-    padding-bottom: 35%;
-    
+    padding-top: 75px;
+    /* Cancels the laptop's upward pull and keeps a fixed gap below the button,
+       so the laptop's top ~2/3 overlaps the chalkboard at any width. */
+    padding-bottom: calc(min(31.6%, 395px) + 50px);
 }
 
 .header-hero-container::before {    
@@ -155,31 +156,31 @@ button:hover {
 
 
 
+/* Laptop straddles the hero/section boundary: top ~2/3 over the chalkboard,
+   bottom ~1/3 over the white section below. Pulled up into the bottom of the
+   hero; fades in on scroll (.reveal-up) instead of on load. */
 .overlap-image-container {
     position: relative;
     z-index: 2;
     text-align: center;
-    margin-top: -30%; /* Adjust to control overlap */
-    
+    margin-top: max(-31.6%, -395px);
 }
 
 .overlap-image {
-    width: 80%;
-    max-width: 1000px; /* Adjust as needed */
-    display:block;
-    margin:0 auto;
-  
+    width: 84%;
+    max-width: 1080px;
+    display: block;
+    margin: 0 auto;
 }
 
 
 
 .hero {
     text-align: center;
-    color:white;
-  position:relative;
-  max-width:90%;
-  margin:0 auto;
-  
+    color: white;
+    position: relative;
+    max-width: 90%;
+    margin: 0 auto;
 }
 .book-session{
   position:relative;
@@ -198,24 +199,33 @@ button:hover {
 
 
 .hero h1 {
-    font-size: 3em;
+    font-size: clamp(3.1rem, 4.8vw, 4.6rem);
+  line-height: 1.15;
   font-family: 'Permanent Marker', sans-serif;
 }
 
 .hero p {
-  font-size: 1.3em;
+  font-size: 1.45em;
+  color: white;
 }
 
 .intro h2{
-  font-size: 1.5em;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  line-height: 1.15;
+  color: #050505;
 }
 
 .intro p{
   font-size: 1.3em;
 }
 
+.how-it-works .intro {
+    margin-bottom: 70px;
+}
+
 
 .how-it-works {
+    padding-top: 70px;
     padding-bottom:50px;
     padding-left: 100px;
     padding-right:100px;
@@ -227,19 +237,27 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 60px 0;
+    margin: 0 0 100px;
     
 }
 
+.how-it-works .step:last-child {
+    margin-bottom: 50px;
+}
+
 .how-it-works .step-content {
-    max-width: 500px;
+    max-width: 540px;
     text-align: left;
     
 }
 
+.how-it-works .step-content h3 {
+    font-size: 1.6em;
+}
+
 .how-it-works .step-image img {
     height: auto;
-    max-width: 400px;
+    max-width: 500px;
     width:100%;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -248,7 +266,7 @@ button:hover {
 
 
 #text {
-  width: 250px;
+  width: 300px;
 }
 
 .how-it-works .step:nth-child(odd) .step-content {
@@ -286,6 +304,16 @@ button:hover {
     margin-bottom: 50px; /* Add more padding between sections */
 }
 
+.subjects-tutored h2,
+.about-me h2,
+.messages-section h2,
+.contact-form-section h2 {
+    font-size: clamp(2rem, 3.4vw, 3.1rem);
+    line-height: 1.08;
+    color: #050505;
+    font-weight: 700;
+}
+
 .subjects-tutored .subjects {
     max-width: 900px;
     margin: 0 auto;
@@ -302,8 +330,8 @@ button:hover {
 }
 
 .subject img {
-    width: 100px;
-    height: 100px;
+    width: 118px;
+    height: 118px;
     
 }
 
@@ -328,7 +356,7 @@ button:hover {
 
 .about-me-video {
     flex: 1;
-    max-width: 300px;
+    max-width: 360px;
     margin-right: 50px;
 }
 
@@ -336,6 +364,39 @@ button:hover {
     flex: 1;
     max-width: 600px;
     text-align: left;
+}
+
+.test-scores-label {
+    margin-bottom: 12px;
+}
+
+.score-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #2e7d32;
+    background-color: #e8f5e9;
+    border: solid #2e7d32 2px;
+    border-radius: 15px;
+    padding: 8px 18px;
+    font-size: 0.9em;
+}
+
+.chip strong {
+    color: #2e7d32;
+    font-weight: 700;
+}
+
+/* Forces the chips after it onto a new row */
+.chip-break {
+    flex-basis: 100%;
+    height: 0;
 }
 
 .messages-section {
@@ -352,31 +413,98 @@ button:hover {
 
 
 .message-board {
-    display: flex;
-    gap: 10px;
-    max-width: 900px;
-    margin: 0 auto;
-    margin-bottom: 80px;
-    align-items: flex-start;
-    padding: 0 10px;
+    width: calc(100vw - 40px);
+    max-width: 2040px;
+    margin: 0 auto 80px;
+    padding: 0;
 }
 
-.message-column {
+/* Horizontal slider: columns keep a readable width and scroll sideways when
+   the viewport cannot fit all six at once. */
+.mb-viewport {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-bottom: 16px;
+    box-sizing: border-box;
+    scrollbar-color: #999 #e7e7e7;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mb-viewport::-webkit-scrollbar {
+    height: 8px;
+}
+
+.mb-viewport::-webkit-scrollbar-track {
+    background: #e7e7e7;
+    border-radius: 999px;
+}
+
+.mb-viewport::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 999px;
+}
+
+/* Top band: six columns; column width stays stable while the viewport scrolls. */
+.mb-top {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 0 60px;
+    box-sizing: border-box;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.mb-col {
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
-    flex: 1;
-    gap: 0px;
+    justify-content: flex-start;
+    gap: 12px;
 }
 
-.message-item {
-    width: 200px;
+.mb-col .message-item {
+    width: 278px;
+    max-width: none;
     height: auto;
-    justify-self: center;
-    align-self: center;
+    display: block;
+}
+
+.mb-video-col {
+    width: 306px;
+}
+
+.mb-col .video-testimonial-section {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Match the video->dots gap to the dots->first-message gap (the column's 12px) */
+.mb-col .video-dots {
+    margin-top: 12px;
+}
+
+/* Bottom row: leftover screenshots at a uniform height */
+.mb-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.mb-bottom .message-item {
+    height: 95px;
+    width: auto;
+    display: block;
 }
 
 .testimonials-slide-image {
-    width: 500px;
+    width: 560px;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -441,12 +569,12 @@ blockquote:after {
 
 .video-dots {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 12px;
 }
 
 .video-dot {
-    height: 12px;
-    width: 12px;
+    height: 10px;
+    width: 10px;
     margin: 0 5px;
     background-color: #bbb;
     border-radius: 50%;
@@ -490,14 +618,76 @@ blockquote:after {
     padding-bottom:35px;
 }
 
-.slideshow-controls {
+/* "Our students attend" greyed-out school logo strip (a slideshow slide) */
+.school-logos {
     text-align: center;
-    margin-top: 15px;
+    padding: 25px 10px 45px;
 }
 
-.slideshow-controls button {
-    
-    font-size: 1em; /* Increase font size for buttons */
+.school-logos-heading {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #050505;
+    margin: 0 0 48px;
+}
+
+.school-logos-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 32px 48px;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+/* Uniform monochrome treatment: brightness(0) flattens every logo (white,
+   colored, or dark) to the same grey silhouette regardless of source color. */
+.school-logo {
+    width: auto;
+    height: auto;
+    max-width: 180px;
+    max-height: 55px;
+    filter: brightness(0);
+    opacity: 0.55;
+    transition: opacity 0.2s ease;
+}
+
+.school-logo:hover {
+    opacity: 0.78;
+}
+
+@media (max-width: 576px) {
+    .school-logos-row { gap: 24px 30px; }
+    .school-logo { max-height: 41px; max-width: 132px; }
+}
+
+/* Dot indicators for the lower testimonials slideshow (one per slide) */
+.slide-dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.slide-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #bbb;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slide-dot.active,
+.slide-dot:hover {
+    background: #333;
+}
+
+.slide-dot:focus-visible {
+    outline: 2px solid #333;
+    outline-offset: 4px;
 }
 
 .contact-form-section {
@@ -505,6 +695,10 @@ blockquote:after {
     padding: 50px 20px; /* Add more padding */
     text-align: center;
     scroll-margin-top: 40px;
+}
+
+.contact-form-section h2 {
+    margin-bottom: 35px;
 }
 
 .contact-form {
@@ -571,16 +765,12 @@ footer a {
 
 @media (max-width: 900px) {
   
-  body{
-    zoom:1;
-  }
-  
   .overlap-image {
     width: 90%;
   }
-  
+
     .how-it-works {
-         padding-top: 20px;
+         padding-top: 70px;
         padding-bottom:50px;
         padding-left: 20px;
         padding-right:20px;
@@ -621,34 +811,16 @@ footer a {
     }
   
     
-    .message-column:nth-child(4) {
-        display: none;
-    }
-    
     .testimonials-layout {
         flex-direction: column;
         text-align: center;
         gap: 30px;
         align-items: center;
     }
-    
-    .testimonials-layout {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-        align-items: center;
-    }
-    
-  .video-testimonial-section {
-    max-width: 30%;
-    width: 100%;
-    
-    margin-top:40px;
-  }
-  
+
   .video-testimonial-section .video-slideshow {
     max-width: 100%;
-    
+
   }
   
     
@@ -661,7 +833,8 @@ footer a {
     
     
     .testimonials-slide-image {
-        width: 500px;
+        width: 600px;
+        max-width: 100%;
         height: auto;
         display: block;
         margin: 0 auto;
@@ -692,7 +865,7 @@ footer a {
   }
   
   .hero h1{
-    font-size: 2.5em;
+    font-size: 2.7em;
   }
   
  .how-it-works .step-image img {
@@ -703,26 +876,35 @@ footer a {
       width:100%;
   }
 
-  .message-column:nth-child(3), 
-  .message-column:nth-child(4) {
-      display: none;
-  }
-  
-  .message-item {
-      width: 100%;
-  }
-  
   .messages-section h2 {
       padding-bottom: 20px;
   }
-  
+
   .message-board {
+      width: calc(100vw - 40px);
       margin-bottom: 50px;
   }
-  
+
+  .mb-viewport {
+      padding-bottom: 16px;
+  }
+
+  .mb-top {
+      padding-left: 32px;
+      padding-right: 32px;
+  }
+
+  .mb-col .message-item {
+      width: 236px;
+  }
+
+  .mb-video-col {
+      width: 260px;
+  }
+
   blockquote:after {
     bottom: 70px;
-    
+
   }
   .testimonials-slide-image {
     width: 100%;
@@ -730,17 +912,17 @@ footer a {
     display: block;
     margin: 0 auto;
   }
-  
+
   .video-testimonial-section {
     max-width: 80%;
     width: 100%;
-    
+    margin: 0 auto;
   }
-  
+
   .video-testimonial-section .video-slideshow {
     max-width: 100%;
   }
-  
-  
-  
+
+
+
 }
