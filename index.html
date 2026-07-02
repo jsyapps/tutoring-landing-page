@@ -102,7 +102,7 @@
             opacity: 0.07; overflow: hidden; width: 150%; height: auto;
         }
         .hero { text-align: center; color: white; position: relative; max-width: 90%; margin: 0 auto; }
-        .hero h1 { font-size: clamp(3.1rem, 4.8vw, 4.6rem); line-height: 1.15; font-family: 'Impact', 'Permanent Marker', sans-serif; }
+        .hero h1 { font-size: clamp(3.1rem, 4.8vw, 4.6rem); line-height: 1.15; font-family: 'Permanent Marker', sans-serif; }
         .hero p { font-size: 1.45em; color: white; }
         .book-session { position: relative; color: white; }
         /* Laptop straddles the hero/section boundary: top ~2/3 over the chalkboard,
@@ -144,25 +144,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Defer Google Fonts to eliminate render blocking -->
-    <script>
-        // Load fonts after initial content renders
-        setTimeout(() => {
-            const link = document.createElement('link');
-            link.href = 'https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Poppins:wght@300;400;700&family=Special+Elite&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Permanent+Marker&display=swap';
-            link.rel = 'stylesheet';
-            document.head.appendChild(link);
-        }, 50);
-    </script>
+    <!-- Non-blocking Google Fonts: preload scanner starts the fetch immediately,
+         swaps in as a stylesheet once loaded (same pattern as style.css above) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Poppins:wght@300;400;700&family=Special+Elite&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Permanent+Marker&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Poppins:wght@300;400;700&family=Special+Elite&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Permanent+Marker&display=swap"></noscript>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-715232773"></script>
+    <!-- LCP is the hero, which waits on this background texture -->
+    <link rel="preload" as="image" href="blackboard.jpg" fetchpriority="high">
+
+    <!-- Google tag (gtag.js): calls queue in dataLayer now, script loads after
+         window load so it doesn't compete with hero/font bytes on mobile -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'AW-715232773');
+
+      window.addEventListener('load', function () {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-715232773';
+        document.head.appendChild(s);
+      });
     </script>
 
 </head>
@@ -255,14 +259,14 @@
                 <div class="school-logos">
                     <p class="school-logos-heading">Tutored Students From</p>
                     <div class="school-logos-row">
-                        <img src="logos/logo-harvard.png?v=2" alt="Harvard University" class="school-logo" width="400" height="105" decoding="sync">
+                        <img src="logos/logo-harvard.webp" alt="Harvard University" class="school-logo" width="264" height="69" decoding="sync">
                         <img src="logos/logo-duke.svg" alt="Duke University" class="school-logo" width="201" height="88" decoding="sync">
-                        <img src="logos/logo-washu.png?v=2" alt="Washington University in St. Louis" class="school-logo" width="400" height="97" decoding="sync">
-                        <img src="logos/logo-fordham.png?v=2" alt="Fordham University" class="school-logo" width="400" height="107" decoding="sync">
+                        <img src="logos/logo-washu.webp" alt="Washington University in St. Louis" class="school-logo" width="264" height="64" decoding="sync">
+                        <img src="logos/logo-fordham.webp" alt="Fordham University" class="school-logo" width="264" height="71" decoding="sync">
                         <img src="logos/logo-stpauls.svg" alt="St. Paul's School" class="school-logo" width="320" height="67" decoding="sync">
-                        <img src="logos/logo-hopkins.png?v=2" alt="Hopkins School" class="school-logo" width="400" height="137" decoding="sync">
-                        <img src="logos/logo-thacher.png?v=2" alt="The Thacher School" class="school-logo" width="400" height="41" decoding="sync">
-                        <img src="logos/logo-img.png?v=2" alt="IMG Academy" class="school-logo" width="400" height="38" decoding="sync">
+                        <img src="logos/logo-hopkins.webp" alt="Hopkins School" class="school-logo" width="264" height="90" decoding="sync">
+                        <img src="logos/logo-thacher.webp" alt="The Thacher School" class="school-logo" width="264" height="27" decoding="sync">
+                        <img src="logos/logo-img.webp" alt="IMG Academy" class="school-logo" width="264" height="25" decoding="sync">
                     </div>
                 </div>
             </div>
