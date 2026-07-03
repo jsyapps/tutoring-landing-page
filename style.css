@@ -454,7 +454,7 @@ button:hover {
 .mb-top {
     display: flex;
     gap: 12px;
-    align-items: flex-start;
+    align-items: center;
     padding: 0 60px;
     box-sizing: border-box;
     width: max-content;
@@ -470,7 +470,7 @@ button:hover {
 }
 
 .mb-col .message-item {
-    width: 278px;
+    width: 320px;
     max-width: none;
     height: auto;
     display: block;
@@ -479,7 +479,6 @@ button:hover {
 .mb-video-col {
     width: 306px;
 }
-
 .mb-col .video-testimonial-section {
     flex: none;
     width: 100%;
@@ -899,7 +898,7 @@ footer a {
   }
 
   .mb-col .message-item {
-      width: 236px;
+      width: 260px;
   }
 
   .mb-video-col {
