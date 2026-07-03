@@ -412,10 +412,10 @@ button:hover {
 
 
 
+/* Full-bleed: cancel the section's 20px side padding so the horizontal
+   scroller clips at the window edge instead of 20px short of it. */
 .message-board {
-    width: calc(100vw - 40px);
-    max-width: 2040px;
-    margin: 0 auto 80px;
+    margin: 0 -20px 80px;
     padding: 0;
 }
 
@@ -881,7 +881,6 @@ footer a {
   }
 
   .message-board {
-      width: calc(100vw - 40px);
       margin-bottom: 50px;
   }
 
