@@ -636,8 +636,8 @@ blockquote:after {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 32px 48px;
-    max-width: 920px;
+    gap: 48px 72px;
+    max-width: 1150px;
     margin: 0 auto;
 }
 
