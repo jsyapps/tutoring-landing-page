@@ -263,10 +263,14 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
+/* Aspect ratios differ per screenshot; these widths give each image roughly
+   the same visual area (~215k px²). */
+.how-it-works img[src^="step1"] { max-width: 590px; }
+.how-it-works img[src^="step3"] { max-width: 535px; }
+.how-it-works img[src^="step4"] { max-width: 615px; }
 
 #text {
-  width: 350px;
+  width: 400px;
 }
 
 .how-it-works .step:nth-child(odd) .step-content {
