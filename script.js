@@ -164,7 +164,10 @@ function initScrollReveal() {
                 }
             };
             window.addEventListener("scroll", onScrollCheck, { passive: true });
-            onScrollCheck(); // in case the page loads already scrolled
+            // In case the page loads already scrolled. Deferred to the next frame:
+            // reading scrollY straight out of DOMContentLoaded forces a synchronous
+            // layout of the whole message board (~59ms of TBT on a slow phone).
+            requestAnimationFrame(onScrollCheck);
         }
     }
 

@@ -106,7 +106,7 @@
             padding-bottom: calc(min(31.6%, 395px) + 50px);
         }
         .header-hero-container::before {
-            content: ""; background-image: url('blackboard.jpg');
+            content: ""; background-image: url('blackboard.webp');
             background-repeat: no-repeat; background-size: cover;
             background-position: center; filter: blur(0px);
             position: absolute; top: 0; right: 0px; bottom: 0px; left: -40%;
@@ -161,10 +161,10 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Special+Elite&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Special+Elite&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"></noscript>
 
-    <!-- Decorative chalk texture at 7% opacity over an already-dark container:
-         not the LCP element (a ::before background is not an LCP candidate), so it
-         yields bandwidth to the hero font rather than competing with it. -->
-    <link rel="preload" as="image" href="blackboard.jpg" fetchpriority="low">
+    <!-- Chrome treats this texture as the hero's LCP resource, so it gets top
+         priority. Re-encoded 800px jpg -> 480px webp (65KB -> 25KB); it renders at
+         7% opacity over a near-black block, so the quality drop is invisible. -->
+    <link rel="preload" as="image" href="blackboard.webp" fetchpriority="high">
 
     <!-- Google tag (gtag.js): calls queue in dataLayer now, script loads on the
          first idle slot after window load so its parse/exec stays out of TBT -->
@@ -286,14 +286,14 @@
                 <div class="school-logos">
                     <p class="school-logos-heading">Tutored Students From</p>
                     <div class="school-logos-row">
-                        <img src="logos/logo-harvard.webp" alt="Harvard University" class="school-logo" width="264" height="69" decoding="sync">
-                        <img src="logos/logo-duke.svg" alt="Duke University" class="school-logo" width="201" height="88" decoding="sync">
-                        <img src="logos/logo-washu.webp" alt="Washington University in St. Louis" class="school-logo" width="264" height="64" decoding="sync">
-                        <img src="logos/logo-fordham.webp" alt="Fordham University" class="school-logo" width="264" height="71" decoding="sync">
-                        <img src="logos/logo-stpauls.svg" alt="St. Paul's School" class="school-logo" width="320" height="67" decoding="sync">
-                        <img src="logos/logo-hopkins.webp" alt="Hopkins School" class="school-logo" width="264" height="90" decoding="sync">
-                        <img src="logos/logo-thacher.webp" alt="The Thacher School" class="school-logo" width="264" height="27" decoding="sync">
-                        <img src="logos/logo-shipley.png" alt="The Shipley School" class="school-logo school-logo--tall" width="184" height="161" decoding="sync">
+                        <img src="logos/logo-harvard.webp" alt="Harvard University" class="school-logo" width="264" height="69" loading="lazy" decoding="async">
+                        <img src="logos/logo-duke.svg" alt="Duke University" class="school-logo" width="201" height="88" loading="lazy" decoding="async">
+                        <img src="logos/logo-washu.webp" alt="Washington University in St. Louis" class="school-logo" width="264" height="64" loading="lazy" decoding="async">
+                        <img src="logos/logo-fordham.webp" alt="Fordham University" class="school-logo" width="264" height="71" loading="lazy" decoding="async">
+                        <img src="logos/logo-stpauls.svg" alt="St. Paul's School" class="school-logo" width="320" height="67" loading="lazy" decoding="async">
+                        <img src="logos/logo-hopkins.webp" alt="Hopkins School" class="school-logo" width="264" height="90" loading="lazy" decoding="async">
+                        <img src="logos/logo-thacher.webp" alt="The Thacher School" class="school-logo" width="264" height="27" loading="lazy" decoding="async">
+                        <img src="logos/logo-shipley.webp" alt="The Shipley School" class="school-logo school-logo--tall" width="142" height="124" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
@@ -493,7 +493,7 @@ My daughter struggled with online learning in calculus. Jessy was professional a
         <a href="privacy-policy.html">Privacy Policy</a>
     </footer>
 
-    <script src="script.js?v=21"></script>
+    <script src="script.js?v=22" defer></script>
     
     <!-- Vimeo Lazy Loading Script -->
     <script>

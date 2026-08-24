@@ -140,7 +140,7 @@ button:hover {
 
 .header-hero-container::before {    
       content: "";
-      background-image: url('blackboard.jpg'); /* Add your background image here */
+      background-image: url('blackboard.webp'); /* Add your background image here */
     background-repeat: no-repeat;
       background-size: cover;
   background-position: center; 
