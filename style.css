@@ -69,14 +69,6 @@ header {
 
 }
 
-.logo-subtitle {
-    font-family: 'Nunito', sans-serif;
-    font-size: .8em;
-    position: relative;    
-    left: 15px;
-    top: -5px;
-}
-
 
 button {
     padding: 10px 20px;
@@ -728,7 +720,7 @@ blockquote:after {
 }
 
 .contact-form-section {
-    background: #e6f7ff url("contact-background.jpg") center / cover no-repeat;
+    background: #e6f7ff url("contact-background.webp") center / cover no-repeat;
     padding: 50px 20px; /* Add more padding */
     text-align: center;
     scroll-margin-top: 40px;
@@ -884,13 +876,6 @@ footer a {
   .logo{
     display:grid;
     padding-left: 0;
-  }
-  
-  .logo-subtitle{
-    position: relative;    
-    left: 15px;
-    top: -5px;
-    font-size: .8em;
   }
   
   .header-buttons{
