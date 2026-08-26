@@ -83,7 +83,7 @@ button {
 
 .header-buttons {
     display: flex;
-  padding-right: 45px;
+  padding-right: 10px;
 
 }
 
@@ -879,7 +879,7 @@ footer a {
   }
   
   .header-buttons{
-    padding-right: 35px;
+    padding-right: 0;
   }
   
   .hero{
