@@ -148,14 +148,20 @@ function initScrollReveal() {
         onLoad.forEach(el => el.classList.add("is-visible"));
     }));
 
-    // .reveal-up (the laptop): it peeks above the fold of the full-height hero, so
-    // instead of revealing on load it stays hidden until the user starts scrolling,
-    // then fades in. Keeps the first screen as just the dark hero + text.
+    // .reveal-up (the laptop): on desktop it fades in on load alongside the hero.
+    // On mobile it peeks above the fold of the full-height hero, so there it stays
+    // hidden until the user starts scrolling, keeping the first screen as just the
+    // dark hero + text.
     const onScrollStart = document.querySelectorAll(".reveal-up");
     if (onScrollStart.length) {
         const revealUp = () => onScrollStart.forEach(el => el.classList.add("is-visible"));
+        // ponytail: 576px is the hero's own mobile breakpoint in index.html; change
+        // both together if the mobile cutoff moves.
+        const isMobile = window.matchMedia("(max-width: 576px)").matches;
         if (reduceMotion) {
             revealUp();
+        } else if (!isMobile) {
+            requestAnimationFrame(() => requestAnimationFrame(revealUp));
         } else {
             const onScrollCheck = () => {
                 if (window.scrollY > 60) {
