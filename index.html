@@ -125,8 +125,11 @@
         .overlap-image-container { position: relative; z-index: 2; text-align: center; margin-top: max(-31.6%, -395px); }
         .overlap-image { width: 84%; max-width: 1080px; display: block; margin: 0 auto; height: auto; }
         @media (max-width: 576px) {
-            .hero { padding: 0 20px; }
+            .hero { padding: 0 20px; text-align: left; }
             .hero h1 { font-size: 2.7em; }
+            /* Let the headline wrap to the column width instead of hard-breaking
+               after "Anxiety"; the <br> still shapes the two-line desktop title. */
+            .hero h1 br { display: none; }
         }
         /* Scroll reveal: fade + slide-up (gated behind .js-anim so content is
            always visible without JS; disabled for reduced-motion users) */
