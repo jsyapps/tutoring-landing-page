@@ -414,7 +414,8 @@ button:hover {
 /* Full-bleed: cancel the section's 20px side padding so the horizontal
    scroller clips at the window edge instead of 20px short of it. */
 .message-board {
-    margin: 0 -20px 80px;
+    /* ponytail: bottom margin 0 while the testimonials slideshow is hidden; restore 80px (50px mobile) with it */
+    margin: 0 -20px 0;
     padding: 0;
 }
 
@@ -903,7 +904,7 @@ footer a {
   }
 
   .message-board {
-      margin-bottom: 50px;
+      margin-bottom: 0;
   }
 
   .mb-viewport {
