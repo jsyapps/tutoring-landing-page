@@ -85,14 +85,27 @@ window.addEventListener('scroll', function() {
   }
 });
 
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-    } else {
-        console.error(`Section with id "${sectionId}" not found.`);
-    }
+// Trial popup: borrow the page's contact form (one form = one Netlify form,
+// same submissions/notifications), and put it back when the popup closes.
+function openTrialForm() {
+    const dialog = document.getElementById('trial-dialog');
+    const section = document.getElementById('contact-form-section');
+    dialog.appendChild(section.querySelector('.contact-form'));
+    dialog.showModal();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const dialog = document.getElementById('trial-dialog');
+    if (!dialog) return;
+    dialog.addEventListener('close', () => {
+        document.getElementById('contact-form-section').appendChild(dialog.querySelector('.contact-form'));
+    });
+    // Click on the dimmed backdrop closes it (clicks inside report the dialog's own box).
+    dialog.addEventListener('click', (e) => {
+        const r = dialog.getBoundingClientRect();
+        if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close();
+    });
+});
 
 // Testimonial video switcher: dots toggle between the videos.
 function showVideoSlide(index) {

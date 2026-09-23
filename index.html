@@ -155,8 +155,8 @@
     </style>
     <script>document.documentElement.classList.add('js-anim');</script>
 
-    <link rel="preload" href="style.css?v=152" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="style.css?v=152"></noscript>
+    <link rel="preload" href="style.css?v=153" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css?v=153"></noscript>
     <link rel="preload" as="font" type="font/woff2" href="fonts/permanent-marker-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/poppins-400-latin.woff2" crossorigin>
 
@@ -202,7 +202,7 @@
           <span class="logo-name">Jessy Chen Math</span>
         </div>
         <div class="header-buttons">
-            <button id="book-trial" class="top" type="submit" onclick="scrollToSection('contact-form-section')">Free Trial</button>
+            <button id="book-trial" class="top" type="submit" onclick="openTrialForm()">Free Trial</button>
         </div>
     </header>
 
@@ -210,7 +210,7 @@
         <section class="hero">
           <h1>Overcome Math Anxiety <br>with a Perfect Scoring Tutor</h1>
             <p>Online tutoring sessions for calculus, precalculus, and more</p>
-                <button class="book-session" type="submit" onclick="scrollToSection('contact-form-section')">Book Trial Session</button>
+                <button class="book-session" type="submit" onclick="openTrialForm()">Book Trial Session</button>
         </section>
     </div>
 
@@ -497,12 +497,19 @@ My daughter struggled with online learning in calculus. Jessy was professional a
         </form>
     </section>
 
+    <!-- Trial popup: openTrialForm() moves the contact form above in here, so it
+         stays a single Netlify form. -->
+    <dialog id="trial-dialog" class="contact-form-section" aria-labelledby="trial-dialog-title">
+        <button type="button" class="dialog-close" aria-label="Close" onclick="this.closest('dialog').close()">&times;</button>
+        <h2 id="trial-dialog-title">Schedule a Trial Session Today!</h2>
+    </dialog>
+
     <footer>
         <p>&copy; 2026 Jessy Chen Math Tutor</p>
         <a href="privacy-policy.html">Privacy Policy</a>
     </footer>
 
-    <script src="script.js?v=23" defer></script>
+    <script src="script.js?v=25" defer></script>
     
     <!-- Vimeo Lazy Loading Script -->
     <script>
