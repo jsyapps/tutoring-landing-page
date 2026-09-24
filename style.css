@@ -789,6 +789,11 @@ blockquote:after {
     padding: 40px 24px 30px;
 }
 
+/* autofocus on the dialog keeps showModal() from focusing (and ringing) the X. */
+#trial-dialog:focus {
+    outline: none;
+}
+
 #trial-dialog::backdrop {
     background: rgba(0, 0, 0, 0.6);
 }
